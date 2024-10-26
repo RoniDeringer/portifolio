@@ -61,10 +61,8 @@
                                         Esqueceu sua senha? clique
                                         <a href="#"
                                             class="text-primary text-gradient font-weight-bold">aqui!</a>
-                                            <span class="teste-123">TESTE123</span>
                                         </p>
                                 </form>
-                                <div class="bg-gradient-primary">TESTE FACIL 123</div>
                             </div>
                         </div>
                     </div>
