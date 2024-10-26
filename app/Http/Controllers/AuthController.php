@@ -18,7 +18,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('home'); // Redireciona após login
+            return redirect()->intended('datatables'); // Redireciona após login
         }
 
         return back()->withErrors([
@@ -30,5 +30,14 @@ class AuthController extends Controller
     {
         Auth::logout();
         return redirect('/'); // Redireciona após logout
+    }
+
+    public function checkLogin()
+    {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        } else {
+            return redirect()->route('datatables');
+        }
     }
 }

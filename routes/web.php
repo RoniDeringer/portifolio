@@ -1,24 +1,23 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DatatablesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {return redirect('sign-in');})->middleware('auth');
+Route::get('/',  [AuthController::class, 'checkLogin']);
 
 // Route::get('login',     function() { dd('teste');})->name('login');
 Route::get('login',     [AuthController::class, 'index'])->name('login');
 Route::post('login',    [AuthController::class, 'login'])->name('post-login');
-Route::post('logout',   [AuthController::class, 'logout'])->middleware('auth');
-Route::get('logout',    function() {Auth::logout();})->name('logout');
+Route::post('logout',   [AuthController::class, 'logout'])->name('logout');
 
 
 
 /* == ROTAS PARA USERS == */
 Route::middleware(['auth'])->group(function () {
-    Route::get('home', function () {
-        return 'Bem-vindo à área restrita 123!';
-    });
+    Route::get('datatables',   [DatatablesController::class, 'index'])->name('datatables');
+    Route::get('datatables2',   [DatatablesController::class, 'index2'])->name('datatables');
 });
 
 
