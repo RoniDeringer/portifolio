@@ -22,7 +22,6 @@
                                 Exemplo de Datatables
                             </p>
                         </div>
-
                         <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
                             <div class=" me-3 my-3 text-end">
                                 <a class="btn bg-gradient-dark mb-0" href="#">
@@ -2213,14 +2212,19 @@
 
 @section('scripts')
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js" integrity="sha256-2RS1U6UNZdLS0Bc9z2vsvV4yLIbJNKxyA4mrx5uossk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMGhxJOz7GYvZvFw5rQm8IHmvLtQ0I7oztaC2w" crossorigin="anonymous" />
 
-  <script>
+    <script>
         $(document).ready(function() {
             var table = $('#empreendimentos').DataTable({
                 language: {
-                    url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json"
+                    url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json",
+                    paginate: {
+                        previous: "<span class='material-icons'>keyboard_arrow_left</span>",
+                        next: "<span class='material-icons'>keyboard_arrow_right</span>"
+                    }
                 },
                 paging: true,
                 ordering: true,

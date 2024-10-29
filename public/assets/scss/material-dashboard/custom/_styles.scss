@@ -1,4 +1,46 @@
-.teste-123{
-    border: 4px solid rgb(61, 4, 168) !important;
-    color: aqua !important;
+/* === CONTAINER DATATABLES === */
+
+// .dataTable-wrapper {
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+
+
+//fazer importação para um style chamado _datatables e colocar isso tudo la
+
+
+/* === PAGINAÇÃO DATATABLES === */
+
+.dataTables_wrapper .dataTables_paginate a.paginate_button {
+    align-items: center;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 50%;
+    color: #7b809a;
+    cursor: pointer;
+    display: flex;
+    font-size: 0;
+    height: 36px;
+    justify-content: center;
+    width: 36px;
+    font-size: .875rem;
 }
+
+.dataTables_wrapper .dataTables_paginate a.paginate_button:hover {
+   background: #d9d9d9;
+   border: 1px solid #dee2e6;
+   color: #7b809a !important;
+}
+
+.dataTables_wrapper .dataTables_paginate a.paginate_button.current {
+    border: none;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .09), 0 2px 3px -1px rgba(0, 0, 0, .07) !important;
+    color: #fff !important;
+    background-image: linear-gradient(195deg, $primary-gradient 20% 0%, $primary-gradient-state 100%) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate a.paginate_button.current:hover {
+    color: #fff !important;
+}
+
+
+

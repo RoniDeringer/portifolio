@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets') }}/img/apple-icon.png">
     <link rel="icon" type="image/png" href="{{ asset('assets') }}/img/favicon.png">
     <title>
-        Studio
+        Deringer
     </title>
 
     <!--     Fonts and icons     -->
@@ -47,10 +47,10 @@
 
 </head>
 <body class="g-sidenav-show bg-gray-200">
-    
+
     {{-- MENU --}}
     <x-menu></x-menu>
-    
+
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
 
         {{-- HEADER --}}
