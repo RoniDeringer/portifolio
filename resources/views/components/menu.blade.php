@@ -15,7 +15,7 @@
         <ul class="navbar-nav">
 
             <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">AB Sistemas</h6>
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Templates</h6>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'datatables' ? ' active bg-gradient-primary' : '' }} "
@@ -94,6 +94,15 @@
                     <span class="nav-link-text ms-1">Perfil</span>
                 </a>
             </li> --}}
+
+
+
+
+            <hr class="horizontal light mt-3">
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Sistema</h6>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link text-white " href="{{ route('login') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
