@@ -12,8 +12,9 @@ class TransacaoController extends Controller
 {
     public function index()
     {
-        $transacoes = Transacao::all();
-        return TransacaoResource::collection($transacoes);
+        $transacoes = TransacaoResource::collection(Transacao::all());
+
+        return view('page.financeiro.transacao', compact('transacoes'));
     }
 
     public function create()

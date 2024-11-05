@@ -21,9 +21,27 @@
                 <a class="nav-link text-white {{ $activePage == 'datatables' ? ' active bg-gradient-primary' : '' }} "
                     href="{{ route('datatables') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">grade</i>
+                        <i class="material-icons opacity-10">list</i>
                     </div>
                     <span class="nav-link-text ms-1">Datatables</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'transacao' ? ' active bg-gradient-primary' : '' }} "
+                    href="{{ route('transacao') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">attach_money</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Financeiro</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'funcionario' ? ' active bg-gradient-primary' : '' }} "
+                    href="{{ route('transacao') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">assignment_ind</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Funcionários</span>
                 </a>
             </li>
 

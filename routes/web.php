@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DatatablesController;
+use App\Http\Controllers\TransacaoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,9 @@ Route::post('logout',   [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth'])->group(function () {
     Route::get('datatables',   [DatatablesController::class, 'index'])->name('datatables');
     Route::get('datatables2',   [DatatablesController::class, 'index2'])->name('datatables');
+
+    Route::get('transacao',   [TransacaoController::class, 'index'])->name('transacao');
+
 });
 
 
