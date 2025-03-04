@@ -54,9 +54,11 @@ Route::get('user-profile', function () {
 })->name('user-profile');
 
 
+Route::middleware('auth')->group(function () {
+    Route::get('clientes', [ClienteController::class, 'index'])->name('index');
+});
 
-Route::get('clientes', [ClienteController::class, 'index'])->name('dashboard');
-Route::get('clientes', [ClienteController::class, 'index'])->name('index');
+// Route::get('clientes', [ClienteController::class, 'index'])->name('index');
 Route::get('clientes/store/database/{id}', [ClienteController::class, 'generateMultiTenacyByCliente'])->name('generateMultiTenacyByCliente');
 
 

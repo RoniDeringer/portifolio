@@ -10,10 +10,10 @@
                             <div class="card z-index-0 fadeIn3 fadeInBottom">
                                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                                     <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
-                                        <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Área Administrativa</h4>
-                                        <div class="row mt-3 align-items-center justify-content-center">
+                                        {{-- <h4 class="text-white font-weight-bolder text-center mt-2 mb-0"></h4> --}}
+                                        <div class="row align-items-center justify-content-center">
                                             <div class="col text-center ms-auto">
-                                                <img src="{{ asset('images/logo.png') }}" height="150px" alt="Roni Deringer">
+                                                <img src="{{ asset('images/logo.png') }}" height="50px" alt="Roni Deringer">
                                             </div>
                                         </div>
                                     </div>
@@ -33,7 +33,6 @@
                                         <div class="input-group input-group-outline mt-3">
                                             <label class="form-label">Email</label>
                                             <input type="email" class="form-control" name="email"
-                                                value="webmaster@arealocal.com.br"
                                             >
                                         </div>
                                         @error('email')
@@ -42,7 +41,6 @@
                                         <div class="input-group input-group-outline mt-3">
                                             <label class="form-label">Senha</label>
                                             <input type="password" class="form-control" name="password"
-                                                value="nov@20al15"
                                             >
                                         </div>
                                         @error('password')
