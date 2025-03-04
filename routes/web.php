@@ -1,33 +1,42 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DatatablesController;
-use App\Http\Controllers\TransacaoController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',  [AuthController::class, 'checkLogin']);
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
 
-// Route::get('login',     function() { dd('teste');})->name('login');
-Route::get('login',     [AuthController::class, 'index'])->name('login');
-Route::post('login',    [AuthController::class, 'login'])->name('post-login');
-Route::post('logout',   [AuthController::class, 'logout'])->name('logout');
-
-
-
-/* == ROTAS PARA USERS == */
-Route::middleware(['auth'])->group(function () {
-    Route::get('datatables',   [DatatablesController::class, 'index'])->name('datatables');
-    Route::get('datatables2',   [DatatablesController::class, 'index2'])->name('datatables');
-
-    Route::get('transacao',   [TransacaoController::class, 'index'])->name('transacao');
-
+Route::get('/', function () {
+    return view('welcome');
 });
 
+Route::get('clientes', [ClienteController::class, 'index'])->name('dashboard');
+Route::get('clientes', [ClienteController::class, 'index'])->name('index');
+Route::get('clientes/store/database/{id}', [ClienteController::class, 'generateMultiTenacyByCliente'])->name('generateMultiTenacyByCliente');
 
-/* == ROTAS PARA ADMIN == */
-Route::middleware('check_admin')->group(function () {
-    Route::get('teste', function () {
-        return 'Bem-vindo à área restrita!';
-    });
-});
+
+Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
+Route::get('profile', [ProfileController::class, 'create'])->middleware('auth')->name('profile');
+Route::post('user-profile', [ProfileController::class, 'update'])->middleware('auth');
+Route::redirect('/home', '/user-profile');
+
+Route::get('user-management', [UserController::class, 'index'])->name('user-management');
+Route::get('user-create', [UserController::class, 'create'])->name('user-create');
+Route::post('user-store', [UserController::class, 'store'])->name('user-store');
+Route::get('user-edit/{id}', [UserController::class, 'edit'])->name('user-edit');
+Route::post('user-update/{id}', [UserController::class, 'update'])->name('user-update');
+Route::post('user-destroy/{id}', [UserController::class, 'destroy'])->name('user-destroy');
+Route::get('user-profile', function () {
+    return view('pages.users.user-profile');
+})->name('user-profile');
