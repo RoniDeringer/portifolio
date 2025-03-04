@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\Ab\ClienteController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
@@ -17,13 +18,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('clientes', [ClienteController::class, 'index'])->name('dashboard');
-Route::get('clientes', [ClienteController::class, 'index'])->name('index');
-Route::get('clientes/store/database/{id}', [ClienteController::class, 'generateMultiTenacyByCliente'])->name('generateMultiTenacyByCliente');
+Route::get('/', function () {
+	return redirect('sign-in');
+})->middleware('guest');
+// Route::get('sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
+// Route::post('sign-up', [RegisterController::class, 'store'])->middleware('guest');
+Route::get('sign-in', [SessionsController::class, 'create'])->middleware('guest')->name('login');
+Route::post('sign-in', [SessionsController::class, 'store'])->middleware('guest');
+Route::post('verify', [SessionsController::class, 'show'])->middleware('guest');
+Route::post('reset-password', [SessionsController::class, 'update'])->middleware('guest')->name('password.update');
+
+
+Route::get('verify', function () {
+	return view('sessions.password.verify');
+})->middleware('guest')->name('verify');
+Route::get('/reset-password/{token}', function ($token) {
+	return view('sessions.password.reset', ['token' => $token]);
+})->middleware('guest')->name('password.reset');
 
 
 Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
@@ -40,3 +52,16 @@ Route::post('user-destroy/{id}', [UserController::class, 'destroy'])->name('user
 Route::get('user-profile', function () {
     return view('pages.users.user-profile');
 })->name('user-profile');
+
+
+
+Route::get('clientes', [ClienteController::class, 'index'])->name('dashboard');
+Route::get('clientes', [ClienteController::class, 'index'])->name('index');
+Route::get('clientes/store/database/{id}', [ClienteController::class, 'generateMultiTenacyByCliente'])->name('generateMultiTenacyByCliente');
+
+
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('datatables', [DashboardController::class, 'datatables'])->name('datatables');
+Route::get('formulario', [DashboardController::class, 'formulario'])->name('formulario');
+
+

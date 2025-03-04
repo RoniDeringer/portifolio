@@ -8,14 +8,13 @@
 
                     </script>,
                     desenvolvido por
-                    <a href="https://arealocal.com.br" class="font-weight-bold" target="_blank" style="transition: all 0.3s">Roni Deringer</a>.
+                    <a href="https://github.com/RoniDeringer" class="font-weight-bold" target="_blank" style="transition: all 0.3s">Roni Deringer</a>.
                 </div>
             </div>
             <div class="col-lg-6">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                     <li class="nav-item">
-                        <a href="https://arealocal.com.br" class="nav-link text-muted" target="_blank">Nosso
-                            Site</a>
+                        <a href="https://www.linkedin.com/in/ronideringer/" class="nav-link text-muted" target="_blank">Linkedin</a>
                     </li>
                 </ul>
             </div>

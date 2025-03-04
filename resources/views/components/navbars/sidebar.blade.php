@@ -19,7 +19,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'dashboard' ? ' active bg-gradient-primary' : '' }} "
-                    href="#">
+                    href="{{route('dashboard')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons-round">dashboard</i>
                     </div>
@@ -27,11 +27,10 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'user-profile' ? 'active bg-gradient-primary' : '' }} "
-                    href="#">
+                <a class="nav-link text-white {{ $activePage == 'user-profile' ? ' active bg-gradient-primary' : '' }} "
+                    href="user-profile">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i style="font-size: 1.2rem;" class="fas fa-user-circle ps-2 pe-2 text-center"></i>
-
+                        <i class="material-icons-round">person</i>
                     </div>
                     <span class="nav-link-text ms-1">Perfil</span>
                 </a>
@@ -40,30 +39,33 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Gerenciar</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'clientes' ? ' active bg-gradient-primary' : '' }} "
-                    href="clientes">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons-round">people</i>
-                    </div>
-                    <span class="nav-link-text ms-1">Clientes</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'datatables' ? ' active bg-gradient-primary' : '' }} "
-                    href="#">
+                    href="{{route('datatables')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center"></i>
+                        <i class="material-icons-round">list_alt</i>
                     </div>
                     <span class="nav-link-text ms-1">Datatables</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'formulario' ? ' active bg-gradient-primary' : '' }} "
-                    href="formulario">
+                    href="{{route('formulario')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons-round">domain</i>
                     </div>
                     <span class="nav-link-text ms-1">Formulário</span>
+                </a>
+            </li>
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">AB Sistemas</h6>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'clientes' ? ' active bg-gradient-primary' : '' }} "
+                    href="clientes">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons-round">people</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Clientes</span>
                 </a>
             </li>
         </ul>
