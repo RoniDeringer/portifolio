@@ -15,7 +15,7 @@ class RegisterController extends Controller
     public function store(){
 
         $attributes = request()->validate([
-            'nome' => 'required|max:255',
+            'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|min:5|max:255',
         ]);
@@ -23,6 +23,6 @@ class RegisterController extends Controller
         $user = User::create($attributes);
         auth()->login($user);
 
-        return redirect('/dashboard');
+        return redirect('/user-profile');
     }
 }

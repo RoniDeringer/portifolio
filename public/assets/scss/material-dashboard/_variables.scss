@@ -54,14 +54,17 @@ $colors: (
 ) !default;
 // scss-docs-end colors-map
 
-$primary:       #3e11e0 !default;
-$secondary:     #7b809a !default;
+// Variáveis customizadas
+// ---------------------------------------------------------------------------------------------
+$primary:       #0052ac !default;
+$secondary:     #740707 !default;
 $info:          #1A73E8 !default;
 $success:       #4CAF50 !default;
 $warning:       #fb8c00 !default;
 $danger:        #F44335 !default;
 $light:         $gray-200 !default;
 $dark:          $h-color !default;
+// ---------------------------------------------------------------------------------------------
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
@@ -79,32 +82,32 @@ $theme-colors: (
 
 
 // Gradient colors
-$primary-gradient:            #7c40ec !default;
-$primary-gradient-state:      #631bd8 !default;
+$primary-gradient:            lighten($primary, 10%) !default;
+$primary-gradient-state:      darken($primary, 10%)  !default;
 
-$secondary-gradient:          #747b8a !default;
-$secondary-gradient-state:    #495361 !default;
+$secondary-gradient:          lighten($secondary, 10%) !default;
+$secondary-gradient-state:    darken($secondary, 10%)  !default;
 
-$info-gradient:               #49a3f1 !default;
-$info-gradient-state:         #1A73E8 !default;
+$info-gradient:               lighten($info, 10%) !default;
+$info-gradient-state:         darken($info, 10%)  !default;
 
-$success-gradient:            #66BB6A !default;
-$success-gradient-state:      #43A047 !default;
+$success-gradient:            lighten($success, 10%) !default;
+$success-gradient-state:      darken($success, 10%)  !default;
 
-$danger-gradient:             #EF5350 !default;
-$danger-gradient-state:       #E53935 !default;
+$danger-gradient:             lighten($danger, 10%) !default;
+$danger-gradient-state:       darken($danger, 10%)  !default;
 
-$warning-gradient:            #FFA726 !default;
-$warning-gradient-state:      #FB8C00 !default;
+$warning-gradient:            lighten($warning, 10%) !default;
+$warning-gradient-state:      darken($warning, 10%)  !default;
 
-$dark-gradient:               #42424a !default;
-$dark-gradient-state:         #191919 !default;
+$dark-gradient:               darken($dark, 10%) !default;
+$dark-gradient-state:         darken($dark, 20%)  !default;
 
-$light-gradient:              #EBEFF4 !default;
-$light-gradient-state:        #CED4DA !default;
+$light-gradient:              lighten($light, 10%) !default;
+$light-gradient-state:        darken($light, 10%)  !default;
 
-$dark-gradient-dark:          #323a54 !default;
-$dark-gradient-state-dark:    #1a2035 !default;
+$dark-gradient-dark:          darken($dark, 20%) !default;
+$dark-gradient-state-dark:    darken($dark, 40%)  !default;
 
 // Gradient Colors map
 $theme-gradient-colors: (
